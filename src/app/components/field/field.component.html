@@ -1,0 +1,6 @@
+<mat-form-field>
+  <mat-label>{{ name }}</mat-label>
+  <!-- <input matInput placeholder="Hola" [(ngModel)]="value" (ngModelChange)="change()"> -->
+  <input matInput placeholder="Hola" [formControl]="value">
+  <!-- <mat-hint>Hint</mat-hint> -->
+</mat-form-field>

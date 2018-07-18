@@ -1,0 +1,14 @@
+<div class="example-container">
+
+  <form [formGroup]="itemForm" (ngSubmit)="onSubmit()">
+    <app-field name="Nombre" [(value)]="itemForm.controls.nombre"></app-field>
+    <app-field name="Apellido" [(value)]="itemForm.controls.apellido"></app-field>
+
+    <button mat-raised-button color="primary" [disabled]="itemForm.invalid">Primary</button>
+  </form>
+
+</div>
+
+<p>
+  <code>{{ itemForm.value | json }}</code>
+</p>
