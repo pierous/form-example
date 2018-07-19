@@ -8,7 +8,6 @@ import { FormularioComponent } from './components/formulario/formulario.componen
 import { FieldComponent } from './components/field/field.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-
 @NgModule({
   declarations: [
     AppComponent,

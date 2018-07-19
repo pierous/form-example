@@ -1,10 +1,17 @@
 <div class="example-container">
 
   <form [formGroup]="itemForm" (ngSubmit)="onSubmit()">
-    <app-field name="Nombre" [(value)]="itemForm.controls.nombre"></app-field>
-    <app-field name="Apellido" [(value)]="itemForm.controls.apellido"></app-field>
+    <app-field title="Nombre" name="nombre" [(formGroup)]="itemForm" [edit]="edit"></app-field>
+    <app-field title="Apellido" name="apellido" [(formGroup)]="itemForm" [edit]="edit"></app-field>
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker" placeholder="Choose a date" formControlName="fecha" (dateChange)="change()">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
 
-    <button mat-raised-button color="primary" [disabled]="itemForm.invalid">Primary</button>
+    <button mat-raised-button color="primary" type="submit"
+      [disabled]="itemForm.invalid || itemForm.disabled">Primary</button>
+    <button mat-raised-button (click)="toggleEdit()">Edit</button>
   </form>
 
 </div>

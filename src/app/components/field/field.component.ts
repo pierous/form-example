@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { FormularioComponent } from '../formulario/formulario.component';
 
 @Component({
   selector: 'app-field',
@@ -7,18 +8,17 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class FieldComponent implements OnInit {
 
+  @Input() title: string;
   @Input() name: string;
-  @Input() value: any;
+  @Input() formGroup: any;
+  @Input() edit: boolean;
+  @Input() type: string;
 
   @Output() valueChange: EventEmitter<any> = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
-  }
-
-  public change() {
-    this.valueChange.emit(this.value);
   }
 
 }
